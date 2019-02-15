@@ -3,8 +3,8 @@ v1:  .word 12
 v2:  .word 2
 v3:  .word 0
 v4:  .word 0
-v5:  .word 0  #count 0
-v6:  .word 0  #count 1
+v5:  .word 0  #count 1
+v6:  .word 0  #count 0
      .text 
      
 main:
@@ -13,7 +13,7 @@ main:
  lw $t1,v2
  #addi $t1,$0,2
  addi $t6,$0,1
- addi $s3,$0,32
+ addi $s4,$0,32
  lw $s0,v3
  #addi $s0,$0,0
  lw $s1,v4
@@ -23,7 +23,7 @@ main:
  
  
  loop:
- slt $t3,$t2,$s3
+ slt $t3,$t2,$s4
  bne $t3,$t6,Exit
  div $t0,$t1
  mfhi $t4
@@ -36,23 +36,32 @@ main:
  loop1:
  bne $s1,$0,loop3
  addi $s0,$s0,1
+ bne $t2,$s4,loop5
  j loop
       
  loop2:
  bne $s0,$0,loop4
  addi $s1,$s1,1
+ bne $t2,$s4,loop6
  j loop
  
  loop3:
- sw $s1,0
+ xor $s1,$s1,$s1
  addi $s2,$s2,1
  j loop1
  
  loop4:
- sw $s0,0
+ xor $s0,$s0,$s0
  addi $s3,$s3,1
  j loop2
  
+ loop5:
+ addi $s3,$s3,1
+ j Exit
+ 
+ loop6:
+ addi $s2,$s2,1
+ j Exit
  
 Exit:
 sw $s2,v5
