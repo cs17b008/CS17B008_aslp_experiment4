@@ -16,7 +16,7 @@ v14: .word 0           #sum3
 v15: .word 0           #carry4
 v16: .word 0           #sum4
 v17:  .word 1
-v18:  .word 0         #overflow
+v18:  .word 0         #overflow  if v18 is 1 overflow ocuured ;if v18 is 0 overflow not occured
      .text 
      
 main:
