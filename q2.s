@@ -113,7 +113,7 @@ srl $s4,$s4,31
  sw $t4,v16
  sw $s4,v15
 
-lw $s3,v18
+lw $s3,v18      #to check over flow 
 and $t0,$t3,$t1
 and $t0,$t0,$s2
 nor $t3,$0,$t3
