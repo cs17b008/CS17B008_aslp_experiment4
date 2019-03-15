@@ -1,7 +1,6 @@
-#used A=[A+(M*q(i))]>>1.
 .data
-   m: .word 2
-   q: .word 4
+   m: .word 3
+   q: .word 5
    a: .word 0 
    r: .word 0
 .text
