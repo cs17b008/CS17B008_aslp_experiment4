@@ -1,3 +1,4 @@
+#used A=[A+(M*q(i))]>>1.
 .data
    m: .word 2
    q: .word 4
