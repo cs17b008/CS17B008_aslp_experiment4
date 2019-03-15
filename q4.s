@@ -28,7 +28,7 @@ loop1:
 	addu $s7,$t0,$s7
 	and $s4,$s7,$s1
 	sub $s6,$s6,$s1
-	sll $s4,$s4,$s6
+	sllv $s4,$s4,$s6
 	addu $s8,$s8,$s4
 	srl $s7,$s7,1
 	addu $t3,$t3,$s1
